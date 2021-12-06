@@ -1,0 +1,1232 @@
+/* ------------------------------------
+                  Reset
+------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* ------------------------------------
+                  Theme
+------------------------------------- */
+:root {
+    --white: white;
+    --black: black;
+    --beige: #EBE7E0;
+    --gold: #CDA63C;
+
+    --heading-font: 'Cormorant Garamond', serif;
+    --text-font: 'Overpass', sans-serif;
+}
+
+body {
+    font-family: var(--text-font);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    font-weight: 700;
+
+    padding-bottom: 0.5em;
+    margin-bottom: 0.5em;
+    position: relative;
+}
+
+h1 {
+    font-size: 2.75em;
+}
+
+h2 {
+    font-size: 2.5em;
+}
+
+h1::after, h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 2.5em;
+    height: 3px;
+    background-color: var(--gold);
+}
+
+h3 {
+    font-size: 2em;
+}
+
+section {
+    margin: 2em 0;
+}
+section p {
+    font-size: 1.1em;
+    text-align: justify;
+    margin-bottom: 2em;
+}
+
+.highlight {
+    font-weight: 600;
+    color: var(--gold);
+}
+
+a {
+    text-decoration: none;
+}
+
+a button {
+    display: unset;
+}
+
+.button-centered {
+    display: flex;
+    justify-content: center;
+    margin: 2em 0;
+}
+
+button {
+    padding: 0.85em 2em;
+    background-color: var(--gold);
+    color: var(--white);
+    outline: none;
+    user-select: none;
+    border: 2px solid var(--gold);
+    cursor: pointer;
+    display: block;
+    transition: all 0.1s ease-in-out;
+    font-size: 1em;
+}
+
+button:hover {
+    color: var(--black);
+    background: var(--white);
+}
+
+main {
+    padding-top: 4em;
+}
+
+.max-width {
+    max-width: 1220px;
+    margin: 0 auto;
+}
+
+/* Scroll margin top */
+#priser, #åbningstider {
+    scroll-margin-top: 4em;
+}
+
+/* ------------------------------------
+                 Header
+------------------------------------- */
+.header {
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    height: 4em;
+    background-color: var(--white);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.contact-line {
+    display: none;
+    background-color: #EBE7E0;
+}
+
+.contact-line > div {
+    max-width: 650px;
+    margin: 0 auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    padding: 0.5em 0;
+}
+
+.contact-line > div > div {
+    flex-grow: 1;
+    border-right: 1px solid var(--black);
+    display: flex;
+    justify-content: center;
+}
+
+.contact-line a {    
+    text-align: center;
+    color: var(--black);
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.contact-line a:hover {
+    color: var(--gold);
+}
+
+.contact-line :last-child {
+    border-right: none;
+}
+
+.navigation {
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    left: 1em;
+    top: 0.5em;
+    height: 3em;
+}
+
+.logo img {
+    height: 100%;
+}
+
+.header a:last-child {
+    display: flex;
+    align-items: center;
+}
+
+.header span {
+    font-size: 2em;
+}
+
+/* ------------------------------------
+               Mobile menu
+------------------------------------- */
+.nav-links {
+    position: absolute;
+    padding: 4em 1em;
+    width: calc(100vw - 2em);
+    height: calc(100vh - 8em);
+    background-color: var(--white);
+    font-size: 1.25em;
+
+    transform: translateY(-100%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-links button {
+    font-size: 1em;
+}
+
+.nav-links.nav-active {
+    transform: translateY(0);
+    transition: transform 0.2s ease-in-out;
+}
+
+.nav-links a {
+    margin: 1em;
+    color: var(--black);
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.nav-button {
+    position: absolute;
+    margin: 17.5px 1em;
+    right: 0;
+    top: 0;
+}
+
+.nav-button div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--black);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Animate burger-button on-click */
+.nav-button.btn-active #line1 { transform: rotate(-45deg) translate(-5px,6px) }
+.nav-button.btn-active #line2 { opacity: 0 }
+.nav-button.btn-active #line3 { transform: rotate(45deg) translate(-5px,-6px) }
+
+/* ------------------------------------
+              Introduction
+------------------------------------- */
+.intro {
+    padding: 1em;
+    background-color: var(--beige);
+    margin-top: 0;
+}
+
+.intro p {
+    font-size: 1.25em;
+    margin: 1em 0;
+    line-height: 1.5em;
+}
+
+.intro a {
+    color: var(--black);
+}
+
+.intro a:hover {
+    color: var(--gold);
+}
+
+.intro article {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.intro article::before {
+    content: '';
+    position: absolute;
+    width: calc(100% / 3);
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: var(--beige);
+    z-index: -2;
+}
+
+.intro article::after {
+    content: '';
+    position: absolute;
+    width: calc(100% / 3 * 2);
+    height: 100%;
+    right: 0;
+    top: 0;
+    background-color: rgba(235, 231, 224, 0.3);
+    z-index: -2;
+}
+
+.intro article > div {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.intro article > div img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.intro article > div div {
+    margin-bottom: 2em;
+}
+
+.intro article > div div button {
+    background: none;
+    color: var(--black);
+}
+
+.intro article > div div button:hover {
+    background-color: var(--gold);
+    color: var(--white);
+}
+
+.intro > div {
+    display: none;
+}
+
+/* ------------------------------------
+                Prices
+------------------------------------- */
+.prices {
+    padding: 1em;
+}
+
+.price-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 2em 0;
+}
+
+.price-buttons button {
+    bordeR: 2px solid var(--beige);
+    background-color: var(--beige);
+    color: var(--black);
+    margin: 0 1em;
+    padding: 1em;
+    position: relative;
+}
+
+.price-buttons button:hover {
+    background-color: var(--white);
+}
+
+.price-buttons button.active:hover {
+    background-color: var(--beige);
+}
+
+.price-buttons button.active::after {
+    content: '';
+    position: absolute;
+    height: 2em;
+    width: 2em;
+    bottom: -1em;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    background-color: var(--beige);
+    z-index: -2;
+}
+
+.price-wrapper {
+    background-color: var(--beige);
+    padding: 2em 2em;
+}
+
+.price-list {
+    display: grid;
+    gap: 1em 1em;
+    grid-template-columns: 1fr;
+}
+
+.price-list article {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.price-list article h3, .price-list article p {
+    margin: 0;
+    padding: 0;
+    font-family: var(--heading-font);
+    font-size: 1.5em;
+}
+
+.prices button {
+    font-size: 1em;
+}
+
+/* ------------------------------------
+                About
+------------------------------------- */
+.about {
+    padding: 1em;
+    margin-bottom: 6em;
+}
+
+.about article {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-images {
+    grid-area: image;
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-images img {
+    max-width: calc(100% / 3 - 0.5em);
+    display: block;
+}
+
+.about article > div {
+    grid-area: content;
+}
+
+/* ------------------------------------
+                  Reviews
+------------------------------------- */
+.reviews::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: -1;
+    background-color: var(--beige);
+}
+
+.reviews {
+    position: relative;
+    padding: 6em 1em 1em 1em;
+}
+
+.reviews-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.reviews-container article {
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 3em 2em;
+    margin-bottom: 1em;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.reviews-container article img {
+    width: 25%;
+    aspect-ratio: 1;
+    border-radius: 100%;
+}
+
+.reviews-container article h3, .reviews-container article p {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 1.25em;
+}
+
+.reviews-container article h3 {
+    margin: 1em 0;
+    font-family: var(--text-font);
+}
+
+.reviews-container article p {
+    font-family: var(--heading-font);
+    
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* ------------------------------------
+                  Products
+------------------------------------- */
+.products {
+    padding: 1em;
+}
+
+.products-container {
+    display: grid;
+    gap: 1em 1em;
+    grid-template-columns: 1fr 1fr;
+}
+
+.products-container article {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: var(--white);
+    padding: 1em;
+    cursor: pointer;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.products-container article:hover {
+    opacity: 0.5;   
+}
+
+.products-container article img {
+    width: 50%;
+    margin: 1em auto;
+    aspect-ratio: 1;
+    display: block;
+}
+
+.products-container article h3 {
+    font-size: 1em;
+    padding: 1em 0 0 0;
+    margin-bottom: 0.25em;
+    font-family: var(--text-font);
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.products-container article p {
+    font-family: var(--text-font);
+    margin: 0;
+}
+
+.products a {
+    margin: 0 auto;
+}
+
+.product-modal, .change-image-modal, .update-person-modal, .choose-time-modal {
+    position: fixed;
+    padding-top: 4em;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-modal > article {
+    position: relative;
+    max-width: 900px;
+    margin: 1em;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 1em;
+    background-color: white;
+    display: grid;
+    gap: 1em 1em;
+    grid-template-columns: auto;
+    grid-template-areas: 
+        "image"
+        "title"
+        "price"
+        "description"
+    ;
+}
+
+.close-button {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    cursor: pointer;
+    width: 2em;
+    height: 2em;
+    background-color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    z-index: 99;
+}
+
+.close-button:hover {
+    opacity: 0.5;
+}
+
+.close-button div {
+    height: 2px;
+    width: 1em;
+    background-color: var(--white);
+    position: absolute;
+}
+
+.close-button div:first-child {
+    transform: rotate(45deg);
+}
+
+.close-button div:last-child {
+    transform: rotate(-45deg);
+}
+
+.product-modal > article h3 {
+    grid-area: title;
+    margin: 0.5em 0 0 0;
+    padding: 0;
+    font-family: var(--text-font);
+}
+
+.product-modal > article p:first-child {
+    grid-area: description;
+}
+
+.product-modal > article p:last-child {
+    font-size: 1.5em;
+    grid-area: price;
+}
+
+.product-modal > article img {
+    grid-area: image;
+    max-width: 250px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* ------------------------------------
+                Login
+------------------------------------- */
+.login {
+    padding: 1em;
+}
+
+.login form label, .login form input {
+    display: block;
+}
+
+.login form input {
+    padding: 0.75em 1em;
+    margin: 0.5em 0 1em;
+    border: none;
+    user-select: none;
+    outline: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    min-width: 30%;
+    max-width: 90%;
+    background: none;
+}
+
+#login-user-password {
+    margin-bottom: 1em;
+}
+
+.login form p {
+    margin: 0.5em 0;
+}
+
+.login form .alt {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--black);
+    margin-top: 0.5em;
+    margin-right: 1em;
+}
+
+.login form .alt:hover {
+    background-color: var(--gold);
+    color: var(--white);
+}
+
+.login-error-message {
+    margin: 1em 0;
+}
+
+.login-error-message a {
+    text-decoration: underline;
+    color: var(--gold);
+    cursor: pointer;
+}
+
+.login-error-message a:hover {
+    color: var(--beige);
+}
+
+/* ------------------------------------
+              Create user
+------------------------------------- */
+.hair-buttons, .strength-buttons  {
+    display: flex;
+}
+
+.hair-buttons button, .strength-buttons button {
+    margin: 1em 1em 1em 0;
+    margin-right: 1em;
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.hair-buttons button.active, .strength-buttons button.active {
+    background-color: var(--gold);
+    color: var(--white);
+}
+
+.hair-buttons button:hover, .strength-buttons button:hover{
+    background-color: var(--gold);
+    color: var(--white);
+}
+
+/* ------------------------------------
+                Profile
+------------------------------------- */
+.profile {
+    padding: 1em;
+}
+
+.profile-info-card {
+    max-width: 750px;
+    margin: 3em auto;
+    position: relative;
+}
+
+.profile-info-card .image-wrapper {
+    position: relative;
+    margin: 2em auto;
+    width: 50%;
+    background-color: var(--white);
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 100%;
+}
+
+.profile-info-card .image-wrapper img {
+    width: 100%;
+    aspect-ratio: 1;
+    display: block;
+    margin: 0 auto;
+    border-radius: 100%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: var(--white);
+    object-fit: cover;
+    object-position: center;
+}
+
+.profile-info-card .image-wrapper div {
+    position: absolute;
+    height: 2.5em;
+    width: 2.5em;
+    bottom: 1em;
+    right: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    border-radius: 100%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.profile-info-card .image-wrapper div:hover {
+    background-color: var(--beige);
+}
+
+.profile-info-card .row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em 0;
+    margin: 0.5em 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.profile-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3em;
+}
+.profile-buttons.left {
+    justify-content: flex-start;
+}
+
+.profile-buttons.left button {
+    margin: 1em;
+}
+.profile-buttons.left button:first-child {
+    margin-left: 0;
+}
+
+.profile-buttons button {
+    margin: 1em;
+}
+
+.change-image-modal .profile-buttons {
+    margin-bottom: 0;
+}
+
+.change-image-modal article {
+    background-color: var(--white);
+    padding: 2em;
+    max-width: 500px;
+    position: relative;
+    margin: 1em;
+}
+
+.change-image-modal article img {
+    max-width: 250px;
+    display: block;
+    margin: 1em auto 0;
+}
+
+.family-members {
+    display: grid;
+    gap: 3em 3em;
+    grid-template-columns: 1fr;
+    margin-bottom: 2em;
+}
+
+.family-members article {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 1em 2em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.family-members article h3 {
+    font-family: var(--text-font);
+    font-size: 1.5em;
+    margin: 0 0 0.25em 0;
+    padding: 0;
+}
+
+.family-members article p {
+    font-family: var(--heading-font);
+    font-weight: bold;
+    font-size: 1.25em;
+    margin: 0;
+    margin: 0;
+}
+
+.family-member-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.family-member-buttons button {
+    padding: 0.5em;
+    margin: 1em 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.family-member-buttons button span {
+    font-size: 1em;
+}
+
+.update-person-modal article {
+    background: var(--white);
+    padding: 2em;
+    position: relative;
+    margin: 1em;
+}
+
+.update-person-modal form label {
+    display: block;
+}
+
+.update-person-modal form input, .update-person-modal form select {
+    display: block;
+    margin: 0 0 1em;
+}
+
+.update-person-modal .profile-buttons {
+    margin: 0;
+}
+
+
+/* ------------------------------------
+                Booking 
+------------------------------------- */
+.booking {
+    padding: 1em;
+}
+
+.booking-form {
+    margin-bottom: 2em;
+}
+
+.booking-form label, .booking-form input, .booking-form select {
+    display: block;
+}
+
+.booking-form input, .booking-form select {
+    margin: 0.5em 0 1em;
+    padding: 0.5em 0 0.5em 0.25em;
+    width: 250px;
+}
+
+.service-form {
+    margin-bottom: 2em;
+}
+
+.service-form h3 {
+    margin: 1em 0 0;
+}
+
+.service {
+    display: flex;
+    margin: 0.5em 0;
+}
+
+.service input {
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: 1em;
+    outline: 1px solid var(--gold);
+}
+
+.service input:checked {
+    outline: none;
+    user-select: none;
+}
+
+.service p {
+    margin: 0;
+}
+
+.service p i {
+    opacity: 0.5;
+    margin-left: 0.5em;
+    font-size: 0.8em;
+}
+
+.service p {
+    margin-right: 1em;
+}
+
+.service p:last-child {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.book-error-message {
+    margin: 1em 0;
+}
+
+.choose-time-modal article {
+    background-color: var(--white);
+    padding: 3em 2em 2em;
+    width: calc(100% - 6em);
+    max-width: 500px;
+    position: relative;
+}
+
+.choose-time-modal article h3 {
+    margin-bottom: 0.1em;
+}
+
+
+/* ------------------------------------
+                Footer
+------------------------------------- */
+.footer {
+    background-color: #EBE7E0;
+    margin-top: auto;
+}
+
+.footer > .max-width {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-card {
+    padding: 1em;
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-card:last-child {
+    margin-bottom: 0;
+}
+
+.footer-card h3 {
+    padding-bottom: 0.5em;
+    margin-bottom: 0.5em;
+    position: relative;
+}
+
+.footer-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 2.5em;
+    height: 3px;
+    background-color: var(--gold);
+}
+
+.footer-card caption {
+    text-align: left;
+}
+
+.footer-card table {
+    width: 100%;
+}
+
+.footer a {
+    color: var(--black);
+}
+
+.footer a:hover {
+    color: var(--gold);
+}
+
+.schedule td {
+    padding: 0.25em 0;
+}
+
+.schedule tr td:first-child {
+    padding-right: 2em;
+    font-weight: bold;
+}
+
+.contact tr:nth-child(odd) {
+    font-weight: bold;
+}
+
+.contact tr:nth-child(even) td {
+    padding-bottom: 1em;
+}
+
+.contact tr:last-child td {
+    padding-bottom: 0;
+}
+
+.reserve button {
+    margin: 1em 0;
+}
+
+.copyright {
+    padding: 1em 0;
+    background-color: var(--white);
+}
+
+.copyright p {
+    text-align: center;
+}
+
+
+@media screen and (min-width: 768px) {
+    #priser, #åbningstider {
+        scroll-margin-top: 6em;
+    }
+
+    .header {
+        height: unset;
+    }
+
+    .header > div {
+        padding: 0 1em;
+    }
+
+    main {
+        padding-top: 6em;
+    }
+
+    .logo {
+        left: 0;
+    }
+
+    .nav-button { display: none }
+    
+    .nav-links {
+        position: inherit;
+        padding: 0;
+        margin: 0;
+        flex-direction: row;
+        height: auto;
+        width: auto;
+        transform: none;
+        transition: none;
+        background: none;
+        font-size: 1em;
+    }
+    
+    .nav-links a {
+        
+        margin: 0;
+        margin-left: 1.5em;
+    }
+
+    .nav-links button {
+        font-size: 0.8em;
+    }
+
+    .navigation {
+        display: flex;
+        height: 4em;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .contact-line {
+        display: block;
+    }
+
+    .intro {
+        background: none;
+        padding: 0 1em;
+        z-index: 1;
+        margin: 2em 0;
+    }
+
+    .intro article {
+        padding: 2em 0;
+    }
+
+    .intro article > div {
+        width: calc(100% / 3 * 2);
+        flex-direction: row;
+    }
+
+    .intro article > div img {
+        width: calc(100% / 3);
+    }
+
+    .intro article > div div {
+        margin: 0 0 0 2em;
+    }
+
+    .intro > div {
+        margin-top: 4em;
+        margin-bottom: 3em;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .intro > div img {
+        display: block;
+        max-width: calc(100% / 9 - 3em);
+        opacity: .5;
+    }
+
+    .price-wrapper {
+        padding: 3em 6em;
+        min-height: 11em;
+    }
+
+    .price-list {
+        gap: 1em 6em;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .reviews::before {
+        height: 65%;
+    }
+
+    .reviews-container {
+        flex-direction: row;
+    }
+    
+    .reviews-container article {
+        max-width: calc(100% / 3 - 7em);
+    }
+
+    .about-images img {
+        max-width: calc(100% / 3 - 3em);
+        display: block;
+    }
+
+    .products-container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .product-modal > article {
+        grid-template-columns: 0.5fr 2fr;
+        grid-template-rows: 0fr 0fr 1fr auto;
+        grid-template-areas: 
+            "image title"
+            "image price"
+            "image description"
+        ;
+    }
+
+    .product-modal > article img {
+        margin: auto;
+    }
+
+    .profile-info-card {
+        margin: 6em auto;
+    }
+
+    .profile-info-card .image-wrapper {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40%;
+        margin: 0;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .profile-info-card .image-wrapper div {
+        bottom: 1.5em;
+        right: 1.5em;
+    }
+
+    .profile-info-card .row div:first-child {
+        margin-left: 50%;
+    }
+
+    .family-members {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .footer > .max-width {
+        flex-direction: row;
+    }
+
+    .footer-card {
+        width: calc(100% / 3);
+        margin-bottom: 0;
+    }
+
+    .footer-card table {
+        width: auto;
+    }
+}
